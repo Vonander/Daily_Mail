@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF07572F2008E019001F5B5F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07572E2008E019001F5B5F /* WebView.swift */; };
+		DFCEA098200541BC0037F1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCEA097200541BC0037F1F9 /* AppDelegate.swift */; };
+		DFCEA09A200541BC0037F1F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCEA099200541BC0037F1F9 /* ViewController.swift */; };
+		DFCEA09D200541BC0037F1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCEA09B200541BC0037F1F9 /* Main.storyboard */; };
+		DFCEA09F200541BC0037F1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCEA09E200541BC0037F1F9 /* Assets.xcassets */; };
+		DFCEA0A2200541BC0037F1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCEA0A0200541BC0037F1F9 /* LaunchScreen.storyboard */; };
+		DFCEA0AD200555E60037F1F9 /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCEA0AC200555E60037F1F9 /* DefaultCell.swift */; };
+		DFCEA0AF20066C0E0037F1F9 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCEA0AE20066C0E0037F1F9 /* XMLParser.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DF07572E2008E019001F5B5F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		DFCEA094200541BC0037F1F9 /* Daily Mail feed iOS app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Mail feed iOS app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCEA097200541BC0037F1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFCEA099200541BC0037F1F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFCEA09C200541BC0037F1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFCEA09E200541BC0037F1F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFCEA0A1200541BC0037F1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DFCEA0A3200541BC0037F1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFCEA0AC200555E60037F1F9 /* DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
+		DFCEA0AE20066C0E0037F1F9 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFCEA091200541BC0037F1F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFCEA08B200541BC0037F1F9 = {
+			isa = PBXGroup;
+			children = (
+				DFCEA096200541BC0037F1F9 /* Daily Mail feed iOS app */,
+				DFCEA095200541BC0037F1F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DFCEA095200541BC0037F1F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFCEA094200541BC0037F1F9 /* Daily Mail feed iOS app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFCEA096200541BC0037F1F9 /* Daily Mail feed iOS app */ = {
+			isa = PBXGroup;
+			children = (
+				DFCEA097200541BC0037F1F9 /* AppDelegate.swift */,
+				DFCEA09B200541BC0037F1F9 /* Main.storyboard */,
+				DFCEA0A920054F320037F1F9 /* Models */,
+				DFCEA0AB20054F970037F1F9 /* Views */,
+				DFCEA0AA20054F470037F1F9 /* Controllers */,
+				DFCEA09E200541BC0037F1F9 /* Assets.xcassets */,
+				DFCEA0A0200541BC0037F1F9 /* LaunchScreen.storyboard */,
+				DFCEA0A3200541BC0037F1F9 /* Info.plist */,
+			);
+			path = "Daily Mail feed iOS app";
+			sourceTree = "<group>";
+		};
+		DFCEA0A920054F320037F1F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DFCEA0AA20054F470037F1F9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFCEA099200541BC0037F1F9 /* ViewController.swift */,
+				DFCEA0AE20066C0E0037F1F9 /* XMLParser.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DFCEA0AB20054F970037F1F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFCEA0AC200555E60037F1F9 /* DefaultCell.swift */,
+				DF07572E2008E019001F5B5F /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFCEA093200541BC0037F1F9 /* Daily Mail feed iOS app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCEA0A6200541BC0037F1F9 /* Build configuration list for PBXNativeTarget "Daily Mail feed iOS app" */;
+			buildPhases = (
+				DFCEA090200541BC0037F1F9 /* Sources */,
+				DFCEA091200541BC0037F1F9 /* Frameworks */,
+				DFCEA092200541BC0037F1F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Daily Mail feed iOS app";
+			productName = "Daily Mail feed iOS app";
+			productReference = DFCEA094200541BC0037F1F9 /* Daily Mail feed iOS app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFCEA08C200541BC0037F1F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Johan Fornander";
+				TargetAttributes = {
+					DFCEA093200541BC0037F1F9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DFCEA08F200541BC0037F1F9 /* Build configuration list for PBXProject "Daily Mail feed iOS app" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFCEA08B200541BC0037F1F9;
+			productRefGroup = DFCEA095200541BC0037F1F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFCEA093200541BC0037F1F9 /* Daily Mail feed iOS app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFCEA092200541BC0037F1F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCEA0A2200541BC0037F1F9 /* LaunchScreen.storyboard in Resources */,
+				DFCEA09F200541BC0037F1F9 /* Assets.xcassets in Resources */,
+				DFCEA09D200541BC0037F1F9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFCEA090200541BC0037F1F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCEA0AF20066C0E0037F1F9 /* XMLParser.swift in Sources */,
+				DF07572F2008E019001F5B5F /* WebView.swift in Sources */,
+				DFCEA09A200541BC0037F1F9 /* ViewController.swift in Sources */,
+				DFCEA098200541BC0037F1F9 /* AppDelegate.swift in Sources */,
+				DFCEA0AD200555E60037F1F9 /* DefaultCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DFCEA09B200541BC0037F1F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFCEA09C200541BC0037F1F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DFCEA0A0200541BC0037F1F9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFCEA0A1200541BC0037F1F9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DFCEA0A4200541BC0037F1F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DFCEA0A5200541BC0037F1F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DFCEA0A7200541BC0037F1F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9ATB58M69;
+				INFOPLIST_FILE = "Daily Mail feed iOS app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vonander.Daily-Mail-feed-iOS-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFCEA0A8200541BC0037F1F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9ATB58M69;
+				INFOPLIST_FILE = "Daily Mail feed iOS app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vonander.Daily-Mail-feed-iOS-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFCEA08F200541BC0037F1F9 /* Build configuration list for PBXProject "Daily Mail feed iOS app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCEA0A4200541BC0037F1F9 /* Debug */,
+				DFCEA0A5200541BC0037F1F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCEA0A6200541BC0037F1F9 /* Build configuration list for PBXNativeTarget "Daily Mail feed iOS app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCEA0A7200541BC0037F1F9 /* Debug */,
+				DFCEA0A8200541BC0037F1F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DFCEA08C200541BC0037F1F9 /* Project object */;
+}
