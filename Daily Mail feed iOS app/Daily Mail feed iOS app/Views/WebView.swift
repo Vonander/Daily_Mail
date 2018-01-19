@@ -16,9 +16,11 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var urlObject:String?
     var urlString:String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,21 +45,21 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let urlString: String = urlTextField.text!
+        var urlString:String = urlTextField.text!
+        
+        if(!urlString.lowercased().hasPrefix("http://") || !urlString.lowercased().hasPrefix("https://")){
+            let prefixedURL:String = "https://" + urlString
+            urlString = prefixedURL
+        }
         
         if(isvalidURL(string: urlString)){
-            print("valid")
             let url: URL = URL(string: urlString)!
-            let urlRequest: URLRequest = URLRequest(url: url)
+            let urlRequest:URLRequest = URLRequest(url: url)
             webView.load(urlRequest)
             textField.resignFirstResponder()
             return true
         }
         
-        
-        let alert = UIAlertController(title: "Error", message: "Invalid input URL", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
         return false
     }
     
@@ -70,7 +72,6 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
         }
         return false
     }
-    
     
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -87,10 +88,24 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     }
     
     
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.isHidden = true
+        let alert = UIAlertController(title: "Error", message: "A server with the specified hostname could not be found. =´(", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.isHidden = false
+    }
+    
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         backButton.isEnabled = webView.canGoBack
         forwardButton.isEnabled = webView.canGoForward
         urlTextField.text = webView.url?.absoluteString
+        activityIndicator.isHidden = true
     }
     
 

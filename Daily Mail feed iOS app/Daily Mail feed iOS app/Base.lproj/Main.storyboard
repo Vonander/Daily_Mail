@@ -239,14 +239,19 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Lcy-5h-K97">
+                                <rect key="frame" x="178" y="334" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WNq-7a-B91" firstAttribute="trailing" secondItem="Seh-D0-Zr4" secondAttribute="trailing" id="CAC-aZ-WOb"/>
+                            <constraint firstItem="Lcy-5h-K97" firstAttribute="centerY" secondItem="WNq-7a-B91" secondAttribute="centerY" id="JuO-Fu-vde"/>
                             <constraint firstItem="G0R-4g-9Vb" firstAttribute="leading" secondItem="WNq-7a-B91" secondAttribute="leading" constant="16" id="Uhm-81-aIF"/>
                             <constraint firstItem="uEy-eG-PZh" firstAttribute="leading" secondItem="G0R-4g-9Vb" secondAttribute="trailing" constant="8" id="V8r-Zm-FCZ"/>
                             <constraint firstItem="WNq-7a-B91" firstAttribute="bottom" secondItem="Seh-D0-Zr4" secondAttribute="bottom" id="Y4D-UU-XPk"/>
                             <constraint firstItem="G0R-4g-9Vb" firstAttribute="top" secondItem="WNq-7a-B91" secondAttribute="top" id="ZJ6-uU-gbX"/>
+                            <constraint firstItem="Lcy-5h-K97" firstAttribute="centerX" secondItem="WNq-7a-B91" secondAttribute="centerX" id="Zoi-CK-uIQ"/>
                             <constraint firstItem="WNq-7a-B91" firstAttribute="trailing" secondItem="GII-oG-Qje" secondAttribute="trailing" constant="16" id="cPn-UI-Xxx"/>
                             <constraint firstItem="uEy-eG-PZh" firstAttribute="top" secondItem="WNq-7a-B91" secondAttribute="top" id="hf8-LG-yzz"/>
                             <constraint firstItem="Seh-D0-Zr4" firstAttribute="leading" secondItem="WNq-7a-B91" secondAttribute="leading" id="htx-GD-pUi"/>
@@ -257,6 +262,7 @@
                         <viewLayoutGuide key="safeArea" id="WNq-7a-B91"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Lcy-5h-K97" id="m1C-pL-uId"/>
                         <outlet property="backButton" destination="G0R-4g-9Vb" id="izG-Zt-5KV"/>
                         <outlet property="forwardButton" destination="GII-oG-Qje" id="fHB-hg-deT"/>
                         <outlet property="urlTextField" destination="uEy-eG-PZh" id="XuF-3S-4o9"/>
