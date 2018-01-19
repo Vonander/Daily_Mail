@@ -16,7 +16,8 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var urlTextField: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var refreshControl:UIRefreshControl?
     
     var urlObject:String?
     var urlString:String?
@@ -27,6 +28,10 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
         
         urlTextField.delegate = self
         webView.navigationDelegate = self
+        
+        self.refreshControl = UIRefreshControl.init()
+        refreshControl!.addTarget(self, action:#selector(refreshControlClicked), for: UIControlEvents.valueChanged)
+        self.webView.scrollView.addSubview(self.refreshControl!)
 
         if(urlObject != nil) {
             urlString = urlObject
@@ -89,7 +94,7 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        activityIndicator.isHidden = true
+        refreshControl?.endRefreshing()
         let alert = UIAlertController(title: "Error", message: "A server with the specified hostname could not be found. =´(", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -97,7 +102,7 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        activityIndicator.isHidden = false
+        refreshControl?.beginRefreshing()
     }
     
     
@@ -105,7 +110,13 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
         backButton.isEnabled = webView.canGoBack
         forwardButton.isEnabled = webView.canGoForward
         urlTextField.text = webView.url?.absoluteString
-        activityIndicator.isHidden = true
+        refreshControl?.endRefreshing()
+    }
+    
+    
+    @objc func refreshControlClicked(){
+        print("refreshControlClicked")
+        webView.reload()
     }
     
 
