@@ -44,12 +44,33 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let urlString: String = urlTextField.text!
-        let url: URL = URL(string: urlString)!
-        let urlRequest: URLRequest = URLRequest(url: url)
-        webView.load(urlRequest)
-        textField.resignFirstResponder()
-        return true
+        
+        if(isvalidURL(string: urlString)){
+            print("valid")
+            let url: URL = URL(string: urlString)!
+            let urlRequest: URLRequest = URLRequest(url: url)
+            webView.load(urlRequest)
+            textField.resignFirstResponder()
+            return true
+        }
+        
+        
+        let alert = UIAlertController(title: "Error", message: "Invalid input URL", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        return false
     }
+    
+    
+    func isvalidURL (string: String?) -> Bool {
+        if string != nil{
+            if let url = NSURL(string: string!){
+                return UIApplication.shared.canOpenURL(url as URL)
+            }
+        }
+        return false
+    }
+    
     
     
     @IBAction func backButtonTapped(_ sender: Any) {
