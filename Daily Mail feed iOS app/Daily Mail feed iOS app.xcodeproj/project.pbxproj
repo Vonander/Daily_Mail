@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF07572F2008E019001F5B5F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07572E2008E019001F5B5F /* WebView.swift */; };
+		DF19783F20122D570053852D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19783E20122D570053852D /* DataModel.swift */; };
 		DFCEA098200541BC0037F1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCEA097200541BC0037F1F9 /* AppDelegate.swift */; };
 		DFCEA09A200541BC0037F1F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCEA099200541BC0037F1F9 /* ViewController.swift */; };
 		DFCEA09D200541BC0037F1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCEA09B200541BC0037F1F9 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		DF07572E2008E019001F5B5F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		DF19783E20122D570053852D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		DFCEA094200541BC0037F1F9 /* Daily Mail feed iOS app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Mail feed iOS app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCEA097200541BC0037F1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFCEA099200541BC0037F1F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		DFCEA0A920054F320037F1F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DF19783E20122D570053852D /* DataModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				DFCEA09A200541BC0037F1F9 /* ViewController.swift in Sources */,
 				DFCEA098200541BC0037F1F9 /* AppDelegate.swift in Sources */,
 				DFCEA0AD200555E60037F1F9 /* DefaultCell.swift in Sources */,
+				DF19783F20122D570053852D /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private var rssItems:[RSSItem]?
     private var currentRssItems:[RSSItem]?
+    private let data:DataModel = DataModel()
     private var url:String = ""
     
     
@@ -34,7 +35,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func fetchData(){
         let feedParser = FeedParser()
-        feedParser.parseFeed(url: "http://www.dailymail.co.uk/sport/index.rss") { (rssItems) in
+        url = data.getRssUrl()
+        feedParser.parseFeed(url: url) { (rssItems) in
             self.rssItems = rssItems
             self.currentRssItems = rssItems
             OperationQueue.main.addOperation {
