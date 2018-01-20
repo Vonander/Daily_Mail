@@ -17,11 +17,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private var currentRssItems:[RSSItem]?
     private let data:DataModel = DataModel()
     private var url:String = ""
+    private var refreshControl:UIRefreshControl?
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshControl = UIRefreshControl.init()
+        refreshControl!.addTarget(self, action:#selector(refreshControlClicked), for: UIControlEvents.valueChanged)
+        collectionView.addSubview(self.refreshControl!)
         navigationItem.leftBarButtonItem = editButtonItem
         initCollectionViewLayout()
         fetchData()
@@ -29,24 +34,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     override func viewDidDisappear(_ animated: Bool) {
+        self.updateCellIsEditing()
         self.collectionView.reloadData()
     }
     
     
     private func fetchData(){
+        refreshControl?.beginRefreshing()
         let feedParser = FeedParser()
         url = data.getRssUrl()
         feedParser.parseFeed(url: url) { (rssItems) in
             self.rssItems = rssItems
             self.currentRssItems = rssItems
             OperationQueue.main.addOperation {
-                self.collectionView.reloadSections(IndexSet(integer: 0))
+                self.collectionView.reloadData()
+                self.refreshControl?.endRefreshing()
+                self.updateCellIsEditing()
             }
         }
     }
     
     
-    func initCollectionViewLayout(){
+    private func initCollectionViewLayout(){
         let screenWidth = UIScreen.main.bounds.width
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -73,16 +82,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             cell.item = item
             cell.cellContainerView.layer.borderWidth = 1
-            
-            //cell.cellContainerView.layer.borderColor = UIColor.blue.cgColor
             cell.cellContainerView.layer.borderColor = textColor.cgColor
             cell.cellContainerView.layer.cornerRadius = 5
-            
             cell.cellDescription.textColor = textColor
             cell.cellDate.textColor = textColor
             cell.cellIsReadLabel.textColor = textColor
-            
-            
             cell.cellImage.layer.masksToBounds = true
             cell.cellImage.layer.cornerRadius = 10
             cell.cellDeleteButton.layer.masksToBounds = true
@@ -94,21 +98,32 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let item = currentRssItems?[indexPath.item] {
-            self.url = item.link
-            rssItems?[indexPath.item].isRead = true
-            currentRssItems?[indexPath.item].isRead = true
+        
+        if(!isEditing){
+            if let item = currentRssItems?[indexPath.item] {
+                self.url = item.link
+                rssItems?[indexPath.item].isRead = true
+                currentRssItems?[indexPath.item].isRead = true
+            }
+            performSegue(withIdentifier: "webview", sender: self)
         }
-        performSegue(withIdentifier: "webview", sender: self)
+        
     }
     
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
+        
+        updateCellIsEditing()
+        collectionView.isScrollEnabled = !editing
+    }
+    
+    
+    private func updateCellIsEditing(){
         if let indexPaths = collectionView?.indexPathsForVisibleItems {
             for indexPaths in indexPaths {
                 if let cell = collectionView?.cellForItem(at: indexPaths) as? DefaultCell {
-                    cell.isEditing = editing
+                    cell.isEditing = isEditing
                 }
             }
         }
@@ -137,8 +152,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         currentRssItems = rssItems?.filter({ RSSItem -> Bool in
             RSSItem.title.lowercased().contains(searchText.lowercased())})
-        self.collectionView.reloadData()
+            self.collectionView.reloadData()
     }
+    
+    
+    @objc func refreshControlClicked(){
+        fetchData()
+    }
+    
+    
 
     
     override func didReceiveMemoryWarning() {

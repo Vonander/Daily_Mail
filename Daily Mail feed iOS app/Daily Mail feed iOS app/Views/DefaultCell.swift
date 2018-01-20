@@ -10,7 +10,6 @@ import UIKit
 
 protocol DefaultCellDelegate: class {
     func delete(cell: DefaultCell)
-    
 }
 
 class DefaultCell: UICollectionViewCell {
@@ -48,14 +47,14 @@ class DefaultCell: UICollectionViewCell {
     }
 
     
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    private func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             completion(data, response, error)
             }.resume()
     }
     
     
-    func downloadImage(url: String) {
+    private func downloadImage(url: String) {
         if let url = URL(string: url) {
             getDataFromUrl(url: url) { data, response, error in
                 guard let data = data, error == nil else { return }

@@ -17,10 +17,10 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var urlTextField: UITextField!
     
-    var refreshControl:UIRefreshControl?
+    private var refreshControl:UIRefreshControl?
     
     var urlObject:String?
-    var urlString:String?
+    private var urlString:String?
     
     
     override func viewDidLoad() {
@@ -115,7 +115,6 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     
     
     @objc func refreshControlClicked(){
-        print("refreshControlClicked")
         webView.reload()
     }
     
