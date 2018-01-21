@@ -99,6 +99,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        searchBar.endEditing(true)
         if(!isEditing){
             if let item = currentRssItems?[indexPath.item] {
                 self.url = item.link
@@ -107,15 +108,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }
             performSegue(withIdentifier: "webview", sender: self)
         }
-        
+    }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+        updateCellIsEditing()
     }
     
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
+        searchBar.endEditing(true)
         updateCellIsEditing()
-        collectionView.isScrollEnabled = !editing
     }
     
     
@@ -156,10 +162,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    
     @objc func refreshControlClicked(){
         fetchData()
     }
-    
     
 
     

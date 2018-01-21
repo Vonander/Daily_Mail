@@ -65,6 +65,7 @@ class WebView: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
             return true
         }
         
+        self.view.endEditing(true)
         return false
     }
     
